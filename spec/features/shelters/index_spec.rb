@@ -6,7 +6,6 @@ describe 'shelters index page', type: :feature do
         shelter_2 = Shelter.create!(name: 'Second Shelter', address: '2nd St.', city: 'Los Angeles', state: 'CA', zip: 93303)
 
         visit "/shelters"
-        save_and_open_page
         
         expect(page).to have_content(shelter_1.name)
         expect(page).to have_content(shelter_2.name)
