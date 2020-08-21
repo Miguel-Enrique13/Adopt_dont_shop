@@ -21,12 +21,10 @@ describe 'New Shelter', type: :feature do
 
         click_on 'Create Shelter'
 
+        save_and_open_page
+
         expect(current_path).to eq('/shelters')
         expect(page).to have_content('First Shelter')
-        expect(page).to have_content('1st St.')
-        expect(page).to have_content('Bakersfield')
-        expect(page).to have_content('CA')
-        expect(page).to have_content(93303)
       end
     end
   end
