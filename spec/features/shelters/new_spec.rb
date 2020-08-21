@@ -23,8 +23,10 @@ describe 'New Shelter', type: :feature do
 
         save_and_open_page
 
+        shelter = Shelter.last
+
         expect(current_path).to eq('/shelters')
-        expect(page).to have_content('First Shelter')
+        expect(page).to have_content(shelter.name)
       end
     end
   end
