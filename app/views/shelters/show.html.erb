@@ -6,3 +6,5 @@
   <li>State: <%= @shelter.state %></li>
   <li>Zip: <%= @shelter.zip %></li>
 </ul>
+
+<%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %>
