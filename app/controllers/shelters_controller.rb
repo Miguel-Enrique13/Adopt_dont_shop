@@ -29,6 +29,12 @@ class SheltersController < ApplicationController
     redirect_to "/shelters/#{shelter.id}"
   end
 
+  def destroy
+    shelter = Shelter.find(params[:id])
+    shelter.destroy
+    redirect_to '/shelters'
+  end
+
   private
   def shelter_params
     params.permit(:name, :address, :city, :state, :zip)
