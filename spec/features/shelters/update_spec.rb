@@ -21,26 +21,32 @@ describe 'As a user', type: :feature do
   it 'I can update a shelter' do
     shelter = Shelter.create!(name: 'First Shelter', address: '1st St.', city: 'Bakersfield', state: 'CA', zip: 93303)
 
-    visit "/shelter/#{shelter.id}"
+    visit "/shelters/#{shelter.id}"
 
     click_on 'Update Shelter'
 
-    expect(current_path).to eq('/shelters/edit')
+    expect(current_path).to eq("/shelters/#{shelter.id}/edit")
 
-    fill_in 'Name', with: 'NEW First Shelter'
-    fill_in 'Address', with: 'NEW 1st St.'
-    fill_in 'City', with: 'NEW Bakersfield'
-    fill_in 'State', with: 'NEW CA'
-    fill_in 'Zip', with: 99993303
+    new_name = 'NEW First Shelter'
+    new_address = 'NEW 1st St.'
+    new_city = 'NEW Bakersfield'
+    new_state = 'NEW CA'
+    new_zip = 99993303
+
+    fill_in 'Name', with: new_name
+    fill_in 'Address', with: new_address
+    fill_in 'City', with: new_city
+    fill_in 'State', with: new_state
+    fill_in 'Zip', with: new_zip
 
     click_on 'Update Shelter'
 
-    visit "/shelter/#{shelter.id}"
+    save_and_open_page
 
-    expect(page).to have_content(shelter.name)
-    expect(page).to have_content(shelter.address)
-    expect(page).to have_content(shelter.city)
-    expect(page).to have_content(shelter.state)
-    expect(page).to have_content(shelter.zip)
+    expect(page).to have_content(new_name)
+    expect(page).to have_content(new_address)
+    expect(page).to have_content(new_city)
+    expect(page).to have_content(new_state)
+    expect(page).to have_content(new_zip)
   end
 end
