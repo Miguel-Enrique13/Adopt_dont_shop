@@ -1,20 +1,20 @@
-<h2>Update Shelter</h2>
+<h2 class="card-title">Update Shelter</h2>
 
-<%= form_tag "/shelters/#{@shelter.id}", method: :patch do %>
+<%= form_tag "/shelters/#{@shelter.id}", method: :patch, class: "form-group" do %>
   <%= label_tag :name %>
-  <%= text_field_tag :name, @shelter.name %><br/>
+  <%= text_field_tag :name, @shelter.name, class: "form-control" %><br/>
 
   <%= label_tag :address %>
-  <%= text_field_tag :address, @shelter.address %><br/>
+  <%= text_field_tag :address, @shelter.address, class: "form-control" %><br/>
 
   <%= label_tag :city %>
-  <%= text_field_tag :city, @shelter.city %><br/>
+  <%= text_field_tag :city, @shelter.city, class: "form-control" %><br/>
 
   <%= label_tag :state %>
-  <%= text_field_tag :state, @shelter.state %><br/>
+  <%= text_field_tag :state, @shelter.state, class: "form-control" %><br/>
 
   <%= label_tag :zip %>
-  <%= text_field_tag :zip, @shelter.zip %><br/>
+  <%= text_field_tag :zip, @shelter.zip, class: "form-control" %><br/>
 
-  <%= submit_tag 'Update Shelter' %>
+  <%= submit_tag 'Update Shelter', class: "btn btn-primary" %>
 <% end %>

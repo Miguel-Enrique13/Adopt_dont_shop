@@ -1,11 +1,11 @@
 <h2><%= @shelter.name %></h2>
 
-<ul>
-  <li>Address: <%= @shelter.address %></li>
-  <li>City: <%= @shelter.city %></li>
-  <li>State: <%= @shelter.state %></li>
-  <li>Zip: <%= @shelter.zip %></li>
-</ul>
+<ul class="list-group">
+  <li class="list-group-item">Address: <%= @shelter.address %></li>
+  <li class="list-group-item">City: <%= @shelter.city %></li>
+  <li class="list-group-item">State: <%= @shelter.state %></li>
+  <li class="list-group-item">Zip: <%= @shelter.zip %></li>
+</ul></br>
 
-<%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %>
-<%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %>
+<%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit", class: "btn btn-primary" %>
+<%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete, class: "btn btn-danger" %>
