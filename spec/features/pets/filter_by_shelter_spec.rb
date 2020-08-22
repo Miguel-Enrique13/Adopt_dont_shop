@@ -8,7 +8,7 @@ describe 'the filter by shelter page' do
 
     shelter2 = Shelter.create!(name: 'Cat Shelter', address: '2nd St.', city: 'Los Angeles', state: 'CA', zip: 93303)
     pet3 = Pet.create!(image: 'img001.png', name: 'Lukas', age: 10, sex: 'Male', shelter: shelter2)
-    pet2 = Pet.create!(image: 'img002.png',name: 'Kitty', age: 7, sex: 'Female', shelter: shelter2)
+    pet4 = Pet.create!(image: 'img002.png',name: 'Bendita', age: 5, sex: 'Female', shelter: shelter2)
 
     visit "/shelters/#{shelter1.id}/pets"
 

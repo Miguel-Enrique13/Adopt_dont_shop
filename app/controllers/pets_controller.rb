@@ -4,7 +4,7 @@ class PetsController < ApplicationController
   end
 
   def filter_by_shelter
-    shelter = Shelter.find(params[:shelter_id])
-    @pets = shelter.pets
+    @shelter = Shelter.find(params[:shelter_id])
+    @pets = @shelter.pets
   end
 end
