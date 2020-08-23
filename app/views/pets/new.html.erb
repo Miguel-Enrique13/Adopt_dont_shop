@@ -1,0 +1,23 @@
+<h2 class="card-title">Create New Pet</h2>
+
+<%= form_tag "/shelters/#{@shelter_id}/pets", class: "form-group" do %>
+  <%= label_tag 'Image' %><br/>
+  <%= text_field_tag :image, nil, class: "form-control" %><br/>
+
+  <%= label_tag 'Name' %><br/>
+  <%= text_field_tag :name, nil, class: "form-control" %><br/>
+
+  <%= label_tag 'Description' %><br/>
+  <%= text_field_tag :description, nil, class: "form-control" %><br/>
+
+  <%= label_tag 'Age' %><br/>
+  <%= text_field_tag :age, nil, class: "form-control" %><br/>
+
+  <%= label_tag 'Sex' %><br/>
+  <%= text_field_tag :sex, nil, class: "form-control" %><br/>
+
+  <%= label_tag 'Adotion Status' %><br/>
+  <%= text_field_tag :adoption_status, nil, class: "form-control" %><br/>
+
+  <%= submit_tag 'Create Pet', class: "btn btn-primary" %>
+<% end %>
