@@ -24,4 +24,28 @@ describe 'pets index page', type: :feature do
     expect(page).to have_content(pet2.sex)
     expect(page).to have_content(pet2.shelter.name)
   end
+
+  it 'can edit pets from the index page' do
+    shelter1 = Shelter.create!(name: 'First Shelter', address: '1st St.', city: 'Bakersfield', state: 'CA', zip: 93303)
+
+    pet1 = Pet.create!(image: 'img001.png', name: 'Olaf', age: 3, sex: 'Male', shelter: shelter1)
+
+    visit "/pets"
+
+    click_on "Update"
+
+    expect(current_path).to eq("/pets/#{pet1.id}/edit")
+  end
+
+  it 'can edit pets from the index page' do
+    shelter1 = Shelter.create!(name: 'First Shelter', address: '1st St.', city: 'Bakersfield', state: 'CA', zip: 93303)
+
+    pet1 = Pet.create!(image: 'img001.png', name: 'Olaf', age: 3, sex: 'Male', shelter: shelter1)
+
+    visit "/pets"
+
+    click_on "Delete"
+
+    expect(page).not_to have_content("#{pet1.name}")
+  end
 end
