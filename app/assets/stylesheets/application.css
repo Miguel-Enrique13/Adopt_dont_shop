@@ -54,4 +54,14 @@ body {
 .shelter-list-item {
   margin-left: 100px;
   margin-right: 100px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.update-btn {
+  text-align: right;
+}
+
+.navbar {
+  margin-bottom: 20px;
 }

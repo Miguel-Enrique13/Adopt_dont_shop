@@ -6,7 +6,7 @@
         <li class="list-group-item"><%= @pet.description %></li>
         <li class="list-group-item"><%= @pet.age %> years old</li>
         <li class="list-group-item"><%= @pet.sex %></li>
-        <li class="list-group-item"><%= @pet.shelter.name %></li>
+        <li class="list-group-item"><%= link_to @pet.shelter.name, "/shelters/#{@pet.shelter.id}" %></li>
         <li class="list-group-item"><%=  @pet.adoption_status %></li>
     </ul>
   </div>
