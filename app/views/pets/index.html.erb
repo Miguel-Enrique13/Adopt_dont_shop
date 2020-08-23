@@ -9,7 +9,7 @@
           <ul class="list-group">
               <li class="list-group-item"><%= pet.age %> years old</li>
               <li class="list-group-item"><%= pet.sex %></li>
-              <li class="list-group-item"><%= pet.shelter.name %></li>
+              <li class="list-group-item"><%= link_to pet.shelter.name, "/shelters/#{pet.shelter.id}" %></li>
           </ul>
           <div class="button">
             <%= link_to 'Update', "/pets/#{pet.id}/edit", class: "btn btn-outline-primary", id: "#{pet.id}" %>

@@ -1,4 +1,4 @@
-<h2><%= @shelter.name %></h2>
+<h2><%= link_to @shelter.name, "/shelters/#{@shelter.id}" %></h2>
 
 <div class="card-columns">
   <% @pets.each do |pet| %>
@@ -9,7 +9,6 @@
         <ul class="list-group">
             <li class="list-group-item"><%= pet.age %> years old</li>
             <li class="list-group-item"><%= pet.sex %></li>
-            <li class="list-group-item"><%= pet.shelter.name %></li>
         </ul>
       </div>
     </div>
