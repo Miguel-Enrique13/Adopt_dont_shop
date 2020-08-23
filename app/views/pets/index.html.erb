@@ -11,6 +11,10 @@
               <li class="list-group-item"><%= pet.sex %></li>
               <li class="list-group-item"><%= pet.shelter.name %></li>
           </ul>
+          <div class="button">
+            <%= link_to 'Update', "/pets/#{pet.id}/edit", class: "btn btn-outline-primary", id: "#{pet.id}" %>
+            <%= link_to 'Delete', "/pets/#{pet.id}", method: :delete, class: "btn btn-outline-danger" %>
+          </div>
         </div>
       </div>
   <% end %>
