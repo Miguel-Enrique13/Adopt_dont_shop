@@ -61,3 +61,7 @@ body {
 .update-btn {
   text-align: right;
 }
+
+.navbar {
+  margin-bottom: 20px;
+}
