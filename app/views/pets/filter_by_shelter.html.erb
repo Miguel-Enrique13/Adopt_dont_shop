@@ -1,17 +1,21 @@
 <h2><%= @shelter.name %></h2>
 
-<% @pets.each do |pet| %>
-<div class="card">
-  <%= image_tag asset_path(pet.image), class: "card-img-top" %>
-  <div class="card-body">
-    <h3 class="card-title"><%= pet.name %></h3>
-    <ul class="list-group">
-        <li class="list-group-item"><%= pet.age %></li>
-        <li class="list-group-item"><%= pet.sex %></li>
-        <li class="list-group-item"><%= pet.shelter.name %></li>
-    </ul>
-  </div>
+<div class="card-columns">
+  <% @pets.each do |pet| %>
+    <div class="card">
+      <%= image_tag asset_path(pet.image), class: "card-img-top" %>
+      <div class="card-body">
+        <h3 class="card-title"><%= pet.name %></h3>
+        <ul class="list-group">
+            <li class="list-group-item"><%= pet.age %> years old</li>
+            <li class="list-group-item"><%= pet.sex %></li>
+            <li class="list-group-item"><%= pet.shelter.name %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
 </div>
-<% end %>
 
-<%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new", class: "btn btn-primary" %>
+<div class="button">
+  <%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new", class: "btn btn-primary" %>
+</div>

@@ -14,18 +14,26 @@
  *= require_self
  */
 .card {
-        width: 18rem;
-        margin: auto;
+  width: 28rem;
+  margin: auto;
+  display: inline-block;
+  padding: 10px;
+}
+
+.card-columns {
+  display: inline-block;
 }
 
 h2 {
   text-align: center;
 }
 
+.card-title {
+  text-align: center;
+}
+
 .list-group {
   text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
   /* display: inline-block;
   align-self: center;
   align-items: stretch; */
@@ -33,4 +41,17 @@ h2 {
 
 body {
   margin: 10px;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.button {
+  text-align: center;
+}
+
+.shelter-list-item {
+  margin-left: 100px;
+  margin-right: 100px;
 }

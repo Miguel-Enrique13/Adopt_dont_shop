@@ -19,5 +19,7 @@
   <%= label_tag 'Adotion Status' %><br/>
   <%= text_field_tag :adoption_status, @pet.adoption_status, class: "form-control" %><br/>
 
-  <%= submit_tag 'Update Pet', class: "btn btn-primary" %>
+  <div class="button">
+    <%= submit_tag 'Update Pet', class: "btn btn-primary" %>
+  </div>
 <% end %>
