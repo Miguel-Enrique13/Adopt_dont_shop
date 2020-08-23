@@ -7,8 +7,6 @@ describe 'shelters index page', type: :feature do
 
         visit "/shelters"
 
-        save_and_open_page
-  
         expect(page).to have_content(shelter_1.name)
         expect(page).to have_content(shelter_2.name)
     end
