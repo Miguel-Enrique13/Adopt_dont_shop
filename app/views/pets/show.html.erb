@@ -13,3 +13,4 @@
 </div>
 
 <%= link_to 'Update Pet', "/pets/#{@pet.id}/edit", class: "btn btn-primary" %>
+<%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete, class: "btn btn-danger" %>
