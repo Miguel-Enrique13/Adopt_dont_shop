@@ -3,8 +3,9 @@
 <ul class="list-group">
   <% @shelters.each do |shelter| %>
     <li class="list-group-item shelter-list-item">
-      <%= link_to "#{shelter.name}", "/shelters/#{shelter.id}" %>
-      <%= link_to 'Update', "/shelters/#{shelter.id}/edit", class: "btn btn-outline-secondary update-btn", id: "#{shelter.id}" %>
+      <%= shelter.name %>
+      <%= link_to "Details", "/shelters/#{shelter.id}", class: "btn btn-outline-secondary update-btn" %>
+      <%= link_to 'Update', "/shelters/#{shelter.id}/edit", class: "btn btn-outline-primary update-btn", id: "#{shelter.id}" %>
       <%= link_to 'Delete', "/shelters/#{shelter.id}", method: :delete, class: "btn btn-outline-danger" %>
     </li>
   <% end %>
