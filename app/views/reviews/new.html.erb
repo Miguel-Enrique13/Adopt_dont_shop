@@ -1,0 +1,19 @@
+<h2 class="card-title">Post a Review</h2>
+
+<%= form_tag "/shelters/#{@shelter.id}", class: "form-group" do %>
+  <%= label_tag 'Title' %><br/>
+  <%= text_field_tag :title, nil, class: "form-control" %><br/>
+
+  <%= label_tag 'Rating' %><br/>
+  <%= number_field_tag :rating, nil, class: "form-control" %><br/>
+
+  <%= label_tag 'Content' %><br/>
+  <%= text_field_tag :content, nil, class: "form-control" %><br/>
+
+  <%= label_tag 'Picture' %><br/>
+  <%= text_field_tag :picture, nil, class: "form-control" %><br/>
+
+  <div class="button">
+    <%= submit_tag 'Post Review', class: "btn btn-primary" %>
+  </div>
+<% end %>
