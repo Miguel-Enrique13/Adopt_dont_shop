@@ -7,19 +7,33 @@
   <li class="list-group-item">Zip: <%= @shelter.zip %></li>
 </ul></br>
 
-<% @shelter.reviews.each do |review| %>
-<ul class="list-group">
-  <li class="list-group-item"> <%= review.title %> </li>
-  <li class="list-group-item"> <%= review.rating %> of 5 </li>
-  <li class="list-group-item"> <%= review.content %> </li>
-  <% if review.picture != nil %>
-  <li class="list-group-item"> <%= image_tag asset_path(review.picture) %> </li>
-  <% end %>
-</ul></br>
-<% end %>
-
 <div class="button">
   <%= link_to 'All Our Pets', "/shelters/#{@shelter.id}/pets", class: "btn btn-success" %>
   <%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit", class: "btn btn-primary" %>
   <%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete, class: "btn btn-danger" %>
+</div>
+
+<div class="card-columns">
+  <% @shelter.reviews.each do |review| %>
+      <div class="card">
+        <h3 class="card-title"><%= review.title %></h3>
+        <div class="card-body">
+          <% if review.picture != nil %>
+            <%= image_tag asset_path(review.picture), class: "card-img-top" %>
+          <% end %>
+          <ul class="list-group">
+              <li class="list-group-item"><%= review.rating %> years old</li>
+              <li class="list-group-item"><%= review.content %></li>
+          </ul>
+          <div class="button">
+            <%= button_to 'Update', "/reviews/#{review.id}/edit", class: "btn btn-outline-primary", method: :get %>
+            <%= button_to 'Delete', "/reviews/#{review.id}", method: :delete, class: "btn btn-outline-danger" %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<div class="button">
+  <%= link_to "Leave a Review!", "/shelters/#{@shelter.id}/reviews/new", class: "btn btn-primary", method: :get %>
 </div>
