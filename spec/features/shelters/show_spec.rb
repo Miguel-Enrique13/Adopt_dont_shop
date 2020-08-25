@@ -41,7 +41,6 @@ describe 'shelters show page shows shelter with that id', type: :feature do
       expect(page).to have_content(review2.title)
       expect(page).to have_content(review2.rating)
       expect(page).to have_content(review2.content)
-      expect(page).to have_content(review2.picture)
 
 
     end
