@@ -7,6 +7,17 @@
   <li class="list-group-item">Zip: <%= @shelter.zip %></li>
 </ul></br>
 
+<% @shelter.reviews.each do |review| %>
+<ul class="list-group">
+  <li class="list-group-item"> <%= review.title %> </li>
+  <li class="list-group-item"> <%= review.rating %> of 5 </li>
+  <li class="list-group-item"> <%= review.content %> </li>
+  <% if review.picture != nil %>
+  <li class="list-group-item"> <%= image_tag asset_path(review.picture) %> </li>
+  <% end %>
+</ul></br>
+<% end %>
+
 <div class="button">
   <%= link_to 'All Our Pets', "/shelters/#{@shelter.id}/pets", class: "btn btn-success" %>
   <%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit", class: "btn btn-primary" %>
