@@ -22,12 +22,12 @@
             <%= image_tag asset_path(review.picture), class: "card-img-top" %>
           <% end %>
           <ul class="list-group">
-              <li class="list-group-item"><%= review.rating %> years old</li>
+              <li class="list-group-item"><%= review.rating %> out of 5</li>
               <li class="list-group-item"><%= review.content %></li>
           </ul>
           <div class="button">
-            <%= button_to 'Update', "/reviews/#{review.id}/edit", class: "btn btn-outline-primary", method: :get %>
-            <%= button_to 'Delete', "/reviews/#{review.id}", method: :delete, class: "btn btn-outline-danger" %>
+            <%# <%= button_to 'Update', "/reviews/#{review.id}/edit", class: "btn btn-outline-primary", method: :get %>
+            <%# <%= button_to 'Delete', "/reviews/#{review.id}", method: :delete, class: "btn btn-outline-danger" %>
           </div>
         </div>
       </div>

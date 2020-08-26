@@ -7,8 +7,8 @@ describe 'New Review', type: :feature do
     @pet2 = Pet.create!(image: 'img002.png',name: 'Kitty', age: 7, sex: 'Female', shelter: @shelter1)
     @review1 = Review.create!(title: "Great Experience!", rating: 4, content: "This shelter is Amazing", shelter: @shelter1)
     @review2 = Review.create!(title: "AMAZING!!!!!!!!!!", rating: 5, content: "This shelter is amazing look at the pup I got!!!", picture: "dog1.jpg", shelter: @shelter1)
-
   end
+
   describe 'As a visitor' do
     describe 'When I visit a shelter show page by clicking a link on the index' do
       it 'I can create a new Review' do
@@ -35,6 +35,18 @@ describe 'New Review', type: :feature do
         expect(page).to have_content(@review1.content)
         expect(page).to have_content(@review1.picture)
       end
+
+      it "It can display a flash message when form not properly filled out" do
+        visit "/shelters/#{@shelter1.id}"
+
+        click_link 'Leave a Review!'
+
+        click_button 'Post Review'
+
+        expect(page).to have_content("Review not created: Required information missing OR Rating is above 5")
+
+      end
+
     end
   end
 end
