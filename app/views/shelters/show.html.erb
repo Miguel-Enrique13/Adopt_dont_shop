@@ -15,7 +15,7 @@
 
 <div class="card-columns">
   <% @shelter.reviews.each do |review| %>
-      <div class="card">
+      <div class="card" id="Review-Card-<%=review.id%>">
         <h3 class="card-title"><%= review.title %></h3>
         <div class="card-body">
           <% if review.picture != nil %>
@@ -26,8 +26,7 @@
               <li class="list-group-item"><%= review.content %></li>
           </ul>
           <div class="button">
-            <%# <%= button_to 'Update', "/reviews/#{review.id}/edit", class: "btn btn-outline-primary", method: :get %>
-            <%# <%= button_to 'Delete', "/reviews/#{review.id}", method: :delete, class: "btn btn-outline-danger" %>
+            <%= button_to 'Update Review', "/reviews/#{review.id}/edit", class: "btn btn-outline-primary", method: :get %>
           </div>
         </div>
       </div>
