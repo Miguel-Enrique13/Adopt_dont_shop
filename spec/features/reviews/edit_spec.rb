@@ -31,6 +31,5 @@ describe 'Review edit page' do
       expect(page).to have_content(1)
       expect(page).to have_content("THIS IS THE CONTENT FOR TESTING")
     end
-
   end
 end
