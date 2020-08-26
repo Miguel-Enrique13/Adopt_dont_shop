@@ -25,7 +25,12 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review not created: Required information missing OR Rating is above 5"
       redirect_to "/reviews/#{review.id}/edit"
     end
+  end
 
+  def destroy
+    review = Review.find(params[:review_id])
+    review.destroy
+    redirect_to "/shelters/#{review.shelter_id}"
   end
 
   private

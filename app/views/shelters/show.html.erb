@@ -27,6 +27,7 @@
           </ul>
           <div class="button">
             <%= button_to 'Update Review', "/reviews/#{review.id}/edit", class: "btn btn-outline-primary", method: :get %>
+            <%= button_to 'Delete Review', "/reviews/#{review.id}", class: "btn btn-outline-primary", method: :delete %>
           </div>
         </div>
       </div>
