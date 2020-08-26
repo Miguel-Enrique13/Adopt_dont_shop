@@ -5,12 +5,27 @@ class ReviewsController < ApplicationController
 
   def create
     review = Review.new(review_params)
-    if !review.save 
+    if !review.save
       flash[:notice] = "Review not created: Required information missing OR Rating is above 5"
       redirect_to "/shelters/#{review.shelter_id}/reviews/new"
     else
       redirect_to "/shelters/#{params[:shelter_id]}"
     end
+  end
+
+  def edit
+    @review = Review.find(params[:review_id])
+  end
+
+  def update
+    review = Review.find(params[:review_id])
+    if review.update(review_params)
+      redirect_to "/shelters/#{review.shelter_id}"
+    else
+      flash[:notice] = "Review not created: Required information missing OR Rating is above 5"
+      redirect_to "/reviews/#{review.id}/edit"
+    end
+
   end
 
   private
