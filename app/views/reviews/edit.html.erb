@@ -1,0 +1,19 @@
+<h2 class="card-title">Update Review</h2>
+
+<%= form_tag "/reviews/#{@review.id}", method: :patch, class: "form-group" do %>
+  <%= label_tag 'Title' %><br/>
+  <%= text_field_tag :title, @review.title, class: "form-control", require: true %><br/>
+
+  <%= label_tag 'Rating' %><br/>
+  <%= number_field_tag :rating, @review.rating, class: "form-control", require: true, placeholder: "Max number is 5", max: 5 %><br/>
+
+  <%= label_tag 'Content' %><br/>
+  <%= text_field_tag :content, @review.content, class: "form-control", require: true  %><br/>
+
+  <%= label_tag 'Picture' %><br/>
+  <%= text_field_tag :picture, @review.picture, class: "form-control" %><br/>
+
+  <div class="button">
+    <%= submit_tag 'Update Review', class: "btn btn-primary" %>
+  </div>
+<% end %>
