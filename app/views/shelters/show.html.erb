@@ -26,8 +26,8 @@
               <li class="list-group-item"><%= review.content %></li>
           </ul>
           <div class="button">
-            <%= button_to 'Update Review', "/reviews/#{review.id}/edit", class: "btn btn-outline-primary", method: :get %>
-            <%= button_to 'Delete Review', "/reviews/#{review.id}", class: "btn btn-outline-primary", method: :delete %>
+            <%= link_to 'Update Review', "/reviews/#{review.id}/edit", class: "btn btn-outline-primary", method: :get %>
+            <%= link_to 'Delete Review', "/reviews/#{review.id}", class: "btn btn-outline-danger", method: :delete %>
           </div>
         </div>
       </div>
