@@ -18,7 +18,7 @@ describe 'I open web page' do
 
     click_on 'Favorite Me!'
 
-    expect(page).to have_content("Pet has been added to favorites")
+    expect(page).to have_content("Pet has been added to Favorites")
 
     within('#NavBar') do
       expect(page).to have_content(1)
