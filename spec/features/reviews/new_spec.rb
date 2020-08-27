@@ -26,9 +26,6 @@ describe 'New Review', type: :feature do
 
         click_on 'Post Review'
 
-        save_and_open_page
-
-
         expect(current_path).to eq("/shelters/#{@shelter1.id}")
         expect(page).to have_content(@review1.title)
         expect(page).to have_content(@review1.rating)
