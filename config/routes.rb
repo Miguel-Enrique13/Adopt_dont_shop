@@ -29,4 +29,5 @@ Rails.application.routes.draw do
 
   #favorites
   get '/pets/:pet_id/favorites', to: 'favorites#new'
+  get '/favorites', to: 'favorites#show'
 end
