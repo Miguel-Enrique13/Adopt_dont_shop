@@ -26,4 +26,7 @@ Rails.application.routes.draw do
   get '/reviews/:review_id/edit', to: 'reviews#edit'
   patch '/reviews/:review_id', to: 'reviews#update'
   delete '/reviews/:review_id', to: 'reviews#destroy'
+
+  #favorites
+  get '/pets/:pet_id/favorites', to: 'favorites#new'
 end

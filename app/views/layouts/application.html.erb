@@ -14,18 +14,29 @@
 </head>
 
 <body>
-  <nav class="navbar sticky-top navbar-light bg-light">
+  <nav class="navbar sticky-top navbar-light bg-light" id="NavBar">
     <form class="form-inline">
       <a class="btn btn-outline-primary" type="button" href="/shelters"> Shelters </a>
-      <a class="btn btn-outline-primary" type="button" href="/pets"> Pets </a>
+      <a class="btn btn-outline-dark" type="button" href="/pets"> Pets </a>
+      <a class="btn btn-outline-warning" type="button" href="/favorites"> Favorites: <%= session[:favorites].count if session[:favorites] != nil  %> </a>
     </form>
   </nav>
 
 
   <% flash.each do |type, message|  %>
-  <div class="alert alert-danger">
-    <%= message %>
-  </div>
+    <% if type == "notice"%>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% elsif type == "favorite"  %>
+      <div class="alert alert-warning">
+        <%= message %>
+      </div>
+    <% elsif type == "repeat"  %>
+      <div class="alert alert-primary">
+        <%= message %>
+      </div>
+    <% end %>
   <% end %>
 
 
