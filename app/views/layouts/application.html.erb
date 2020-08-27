@@ -24,15 +24,15 @@
 
 
   <% flash.each do |type, message|  %>
-    <% if type == "notice"%>
+    <% if type == "red"%>
       <div class="alert alert-danger">
         <%= message %>
       </div>
-    <% elsif type == "favorite"  %>
+    <% elsif type == "yellow"  %>
       <div class="alert alert-warning">
         <%= message %>
       </div>
-    <% elsif type == "repeat"  %>
+    <% elsif type == "blue"  %>
       <div class="alert alert-primary">
         <%= message %>
       </div>
