@@ -11,7 +11,8 @@
     </ul>
   </div>
   <div class="button">
-    <%= link_to 'Update Pet', "/pets/#{@pet.id}/edit", class: "btn btn-primary" %></br>
-    <%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete, class: "btn btn-danger" %>
+    <%= link_to 'Update Pet', "/pets/#{@pet.id}/edit", class: "btn btn-primary" %>
+    <%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete, class: "btn btn-danger" %></br>
+    <%= link_to 'Favorite Me!', "/pets/#{@pet.id}/favorites", method: :get, class: "btn btn-warning" %>
   </div>
 </div>
