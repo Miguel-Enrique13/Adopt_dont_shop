@@ -1,11 +1,22 @@
 
-<% session[:favorites].each do |pet| %>
-<div class="card">
-  <div class="card-title">
-    <%= link_to "#{pet["name"]}", "/pets/#{pet[:id]}" %>
-    <div class="card-body">
-      <%= image_tag asset_path(pet["image"]), class: "card-img-top" %>
+
+<% if session[:favorites] != nil  %>
+  <% session[:favorites].each do |pet_id| %>
+  <% pet = Pet.find(pet_id) %>
+  <div class="card" id="Favorite-Card-<%=pet[:id]%>" >
+    <div class="card-title">
+      <%= link_to "#{pet["name"]}", "/pets/#{pet[:id]}" %>
+      <div class="card-body">
+        <%= image_tag asset_path(pet[:image]), class: "card-img-top" %>
+      </div>
+    </div>
+    <div class="button">
+      <%= link_to 'Remove', "/favorites/#{pet[:id]}", class: "btn btn-outline-danger", method: :delete %>
     </div>
   </div>
+  <% end %>
+<% end  %>
+
+<div class="button">
+  <%= link_to 'Remove All', "/favorites", class: "btn btn-danger btn-lg", method: :delete %>
 </div>
-<% end %>
