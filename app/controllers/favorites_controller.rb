@@ -11,4 +11,9 @@ class FavoritesController < ApplicationController
       redirect_to "/pets/#{pet.id}"
     end
   end
+
+  def show
+
+  end
+  
 end
