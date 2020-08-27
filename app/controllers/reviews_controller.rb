@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
     if review.update(review_params)
       redirect_to "/shelters/#{review.shelter_id}"
     else
-      flash[:notice] = "Review not created: Required information missing OR Rating is above 5"
+      flash[:notice] = "Review not created: Required information missing"
       redirect_to "/reviews/#{review.id}/edit"
     end
   end
